@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Canvas</title>
+  </head>
+  <body>
+    <img id="img1" src="img1.png">
+    <img id="img2" src="img2.png">
+    <img id="img3" src="img3.png">
+    <img id="img4" src="img4.png">
+
+    <canvas id="myCanvas" width="800" height="480" style="border:1px solid #d3d3d3;"></canvas>
+
+    <script>
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+
+      // Function Gradient
+      var grd=ctx.createLinearGradient(0,0,0,350);
+      grd.addColorStop(0,"#c0ffff");
+      grd.addColorStop(1,"white");
+
+      ctx.fillStyle=grd;
+      ctx.fillRect(0,0,800,350);
+
+      var grd=ctx.createLinearGradient(0,350,0,480);
+      grd.addColorStop(0,"white");
+      grd.addColorStop(1,"#008000");
+
+      ctx.fillStyle=grd;
+      ctx.fillRect(0,350,800,480);
+      // Function Gradient
+
+      ctx.moveTo(0,351);
+      ctx.lineTo(800,351);
+      ctx.stroke();
+
+      var x = 49;
+      for(i=0; i<=10; i++){
+        ctx.fillStyle="#000";
+        ctx.fillRect(x,372,64,64);
+        ctx.fillStyle="#666";
+        ctx.fillRect(x+2,372+2,60,60);
+        x = x + 64;
+      }
+
+      var img1=document.getElementById("img1");
+      var img2=document.getElementById("img2");
+      var img3=document.getElementById("img3"); 
+      var img4=document.getElementById("img4");
+      ctx.drawImage(img1,10,10);
+      ctx.drawImage(img2,84,10);
+      ctx.drawImage(img3,158,10);
+      ctx.drawImage(img4,232,10);
+    </script>
+  </body>
+</html>
