@@ -7,3 +7,4 @@ a) canvas
 b) desenho do cenario
 c) desenho das celulas de armazenamento de monstros
 
+...
